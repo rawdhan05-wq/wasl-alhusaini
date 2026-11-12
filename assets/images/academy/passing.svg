@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a1b0c"/>
+      <stop offset=".6" stop-color="#221008"/>
+      <stop offset="1" stop-color="#110804"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="6%" r="70%">
+      <stop offset="0" stop-color="#ff8c00" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#ff8c00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ballG" cx="34%" cy="28%" r="78%">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset=".62" stop-color="#ffd9b0"/>
+      <stop offset="1" stop-color="#c9772f"/>
+    </radialGradient>
+    <linearGradient id="fig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd6a6"/>
+      <stop offset="1" stop-color="#ff8a28"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <!-- pitch -->
+  <g stroke="#ff9a4d" stroke-opacity=".15" fill="none" stroke-width="2">
+    <path d="M-20 446 H820"/>
+    <circle cx="400" cy="446" r="92"/>
+    <path d="M400 354 V500"/>
+  </g>
+
+  <!-- pass arrow -->
+  <path d="M330 400 C 420 340, 500 340, 576 384" fill="none" stroke="#ff6a00" stroke-opacity=".85" stroke-width="6" stroke-linecap="round" stroke-dasharray="16 16"/>
+  <path d="M560 366 L 586 384 L 558 400" fill="none" stroke="#ffcf9e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- target rings at receiver -->
+  <g fill="none" stroke="#ffb877" stroke-opacity=".55">
+    <ellipse cx="616" cy="418" rx="58" ry="20" stroke-width="3"/>
+    <ellipse cx="616" cy="418" rx="34" ry="12" stroke-width="3"/>
+  </g>
+
+  <!-- passer -->
+  <ellipse cx="176" cy="438" rx="86" ry="15" fill="#000" opacity=".32" filter="url(#soft)"/>
+  <g fill="none" stroke="url(#fig)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M168 268 L154 328 L126 372"/>
+    <path d="M154 328 L204 356 L252 382"/>
+    <path d="M176 214 L138 250 L104 236"/>
+    <path d="M176 214 L216 244 L250 228"/>
+    <path d="M168 190 L168 268"/>
+  </g>
+  <circle cx="168" cy="150" r="27" fill="#ffdcb6"/>
+
+  <!-- ball -->
+  <g>
+    <circle cx="300" cy="404" r="30" fill="url(#ballG)"/>
+    <g fill="#24130c" opacity=".82">
+      <path d="M300 384 L315 395 L309 413 H291 L285 395 Z"/>
+      <path d="M270 400 L282 407 L279 421 L269 417 Z"/>
+      <path d="M330 400 L319 408 L323 421 L332 416 Z"/>
+    </g>
+  </g>
+
+  <!-- receiver -->
+  <ellipse cx="632" cy="438" rx="86" ry="15" fill="#000" opacity=".32" filter="url(#soft)"/>
+  <g fill="none" stroke="url(#fig)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M626 268 L640 328 L668 372"/>
+    <path d="M640 328 L592 356 L548 376"/>
+    <path d="M618 214 L580 246 L548 230"/>
+    <path d="M618 214 L658 244 L690 226"/>
+    <path d="M626 190 L626 268"/>
+  </g>
+  <circle cx="626" cy="150" r="27" fill="#ffdcb6"/>
+
+  <!-- two-touch hint -->
+  <g fill="none" stroke="#ffd0a0" stroke-opacity=".8" stroke-width="4" stroke-linecap="round">
+    <circle cx="400" cy="120" r="18"/>
+    <circle cx="446" cy="120" r="18"/>
+    <path d="M424 106 L418 134" stroke-opacity=".45"/>
+  </g>
+</svg>

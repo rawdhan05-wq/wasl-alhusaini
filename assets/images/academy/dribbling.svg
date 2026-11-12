@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3d1c0c"/>
+      <stop offset=".55" stop-color="#24110a"/>
+      <stop offset="1" stop-color="#120905"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="76%" cy="12%" r="72%">
+      <stop offset="0" stop-color="#ff8c00" stop-opacity=".5"/>
+      <stop offset=".55" stop-color="#f04416" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#f04416" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ballG" cx="34%" cy="28%" r="78%">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset=".62" stop-color="#ffd9b0"/>
+      <stop offset="1" stop-color="#c9772f"/>
+    </radialGradient>
+    <linearGradient id="fig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffcf9b"/>
+      <stop offset="1" stop-color="#ff8c2a"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <!-- pitch markings -->
+  <g stroke="#ff9a4d" stroke-opacity=".14" fill="none">
+    <path d="M-40 452 H840" stroke-width="2"/>
+    <path d="M120 500 A210 210 0 0 1 540 500" stroke-width="2"/>
+    <path d="M330 452 V500" stroke-width="2"/>
+  </g>
+
+  <!-- movement trail -->
+  <path d="M120 432 C 190 300, 250 460, 320 340 S 440 250, 500 320" fill="none" stroke="#ff6a00" stroke-opacity=".5" stroke-width="4" stroke-dasharray="12 14" stroke-linecap="round"/>
+  <path d="M488 300 L 512 316 L 486 332" fill="none" stroke="#ff8c00" stroke-opacity=".8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- cones -->
+  <g>
+    <g transform="translate(150 404)">
+      <path d="M0 40 L22 0 L44 40 Z" fill="#ff6a00"/>
+      <path d="M13 22 H31 L36 32 H8 Z" fill="#ffe6cc"/>
+    </g>
+    <g transform="translate(268 372)">
+      <path d="M0 40 L22 0 L44 40 Z" fill="#ff7a12"/>
+      <path d="M13 22 H31 L36 32 H8 Z" fill="#ffe6cc"/>
+    </g>
+    <g transform="translate(388 404)">
+      <path d="M0 40 L22 0 L44 40 Z" fill="#ff6a00"/>
+      <path d="M13 22 H31 L36 32 H8 Z" fill="#ffe6cc"/>
+    </g>
+    <g transform="translate(506 372)">
+      <path d="M0 40 L22 0 L44 40 Z" fill="#ff7a12"/>
+      <path d="M13 22 H31 L36 32 H8 Z" fill="#ffe6cc"/>
+    </g>
+  </g>
+
+  <!-- player -->
+  <g fill="none" stroke="url(#fig)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M296 260 L282 330 L262 382"/>
+    <path d="M282 330 L330 372 L344 412"/>
+    <path d="M300 208 L262 250"/>
+    <path d="M300 208 L346 238"/>
+    <path d="M296 186 L294 262"/>
+  </g>
+  <circle cx="298" cy="146" r="27" fill="#ffd8ae"/>
+  <ellipse cx="300" cy="432" rx="96" ry="16" fill="#000" opacity=".34" filter="url(#soft)"/>
+
+  <!-- ball -->
+  <g>
+    <circle cx="380" cy="408" r="34" fill="url(#ballG)"/>
+    <g fill="#24130c" opacity=".82">
+      <path d="M380 386 L396 398 L390 418 H370 L364 398 Z"/>
+      <path d="M346 404 L360 412 L356 428 L344 424 Z"/>
+      <path d="M414 404 L402 414 L406 428 L418 422 Z"/>
+    </g>
+    <circle cx="380" cy="408" r="34" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+  </g>
+
+  <!-- speed accents -->
+  <g stroke="#ffb877" stroke-opacity=".6" stroke-width="5" stroke-linecap="round">
+    <path d="M188 190 H246"/>
+    <path d="M172 216 H224"/>
+    <path d="M198 242 H238"/>
+  </g>
+</svg>

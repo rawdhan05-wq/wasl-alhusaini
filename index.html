@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+  <meta name="theme-color" content="#120A06" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="وصل الحسيني — سكون الرياضي. تطبيق كرة القدم العربي: مباريات، بطولات، أخبار، أندية وأكاديمية تدريبية." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="وصل الحسيني" />
+  <title>وصل الحسيني — سكون الرياضي</title>
+  <link rel="canonical" href="https://wasl-alhusaini.surge.sh/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="وصل الحسيني" />
+  <meta property="og:title" content="وصل الحسيني — سكون الرياضي" />
+  <meta property="og:description" content="تطبيق كرة القدم العربي: مباريات مباشرة، ترتيب الدوريات، أخبار، أندية وأكاديمية تدريبية." />
+  <meta property="og:url" content="https://wasl-alhusaini.surge.sh/" />
+  <meta property="og:image" content="https://wasl-alhusaini.surge.sh/assets/icon-512.png" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="وصل الحسيني — سكون الرياضي" />
+  <meta name="twitter:description" content="تطبيق كرة القدم العربي: مباريات مباشرة، ترتيب الدوريات، أخبار، أندية وأكاديمية تدريبية." />
+  <meta name="twitter:image" content="https://wasl-alhusaini.surge.sh/assets/icon-512.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "وصل الحسيني",
+    "alternateName": "سكون الرياضي",
+    "url": "https://wasl-alhusaini.surge.sh/",
+    "inLanguage": "ar",
+    "description": "تطبيق كرة القدم العربي: مباريات مباشرة، ترتيب الدوريات، أخبار، أندية وأكاديمية تدريبية.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "وصل الحسيني",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://wasl-alhusaini.surge.sh/assets/icon-512.png"
+      }
+    }
+  }
+  </script>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-180.png" />
+  <link rel="preload" href="assets/fonts/Cairo-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/fonts/Cairo-Bold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/logo-mark.svg" as="image" />
+  <link rel="stylesheet" href="styles.css" id="themeStyles" />
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("wasl.theme.v1") === "light") {
+          document.documentElement.dataset.theme = "light";
+          var link = document.getElementById("themeStyles");
+          if (link) link.setAttribute("href", "styles-light.css");
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", "#F7F1EA");
+          var scheme = document.querySelector('meta[name="color-scheme"]');
+          if (scheme) scheme.setAttribute("content", "light");
+        }
+      } catch (error) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+
+  <div class="splash" id="splash" role="status" aria-label="جارٍ فتح تطبيق وصل الحسيني">
+    <div class="splash__rings" aria-hidden="true"></div>
+    <div class="splash__flare" aria-hidden="true"></div>
+    <div class="splash__content">
+      <div class="splash__logo-wrap">
+        <img class="splash__logo" src="assets/logo-mark.svg" alt="شعار وصل الحسيني" width="154" height="154" />
+      </div>
+      <h1 class="splash__title">وصل الحسيني</h1>
+      <p class="splash__tagline">سكون الرياضي</p>
+      <div class="splash__loader" aria-hidden="true"><span></span></div>
+    </div>
+    <p class="splash__footer">شغف كرة القدم في مكان واحد</p>
+  </div>
+
+  <div class="app-shell" id="app">
+    <header class="topbar" id="topbar"></header>
+    <main class="screen" id="main" tabindex="-1"></main>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="التنقل الرئيسي">
+      <button class="nav-item" data-route="home" aria-label="الرئيسية">
+        <span class="nav-item__icon" data-icon="home"></span>
+        <span class="nav-item__label">الرئيسية</span>
+      </button>
+      <button class="nav-item" data-route="competitions" aria-label="البطولات">
+        <span class="nav-item__icon" data-icon="trophy"></span>
+        <span class="nav-item__label">البطولات</span>
+      </button>
+      <button class="nav-item" data-route="news" aria-label="الأخبار">
+        <span class="nav-item__icon" data-icon="news"></span>
+        <span class="nav-item__label">الأخبار</span>
+      </button>
+      <button class="nav-item" data-route="academy" aria-label="الأكاديمية">
+        <span class="nav-item__icon" data-icon="academy"></span>
+        <span class="nav-item__label">الأكاديمية</span>
+      </button>
+      <button class="nav-item" data-route="more" aria-label="المزيد">
+        <span class="nav-item__icon" data-icon="grid"></span>
+        <span class="nav-item__label">المزيد</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="sheet-layer" id="sheetLayer" aria-hidden="true">
+    <div class="sheet-backdrop" data-close-sheet></div>
+    <section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <div class="sheet__handle" aria-hidden="true"></div>
+      <div class="sheet__head">
+        <h2 id="sheetTitle">القائمة</h2>
+        <button class="icon-btn icon-btn--ghost" data-close-sheet aria-label="إغلاق">×</button>
+      </div>
+      <div class="sheet__body" id="sheetBody"></div>
+    </section>
+  </div>
+
+  <div class="modal-layer" id="modalLayer" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__head">
+        <h2 id="modalTitle">نافذة</h2>
+        <button class="icon-btn icon-btn--ghost" data-close-modal aria-label="إغلاق">×</button>
+      </div>
+      <div class="modal__body" id="modalBody"></div>
+    </section>
+  </div>
+
+  <div class="watch-layer" id="watchLayer" aria-hidden="true">
+    <div class="watch-shell" role="dialog" aria-modal="true" aria-labelledby="watchTitle">
+      <div class="watch-head">
+        <div class="watch-head__copy">
+          <strong id="watchTitle">مشاهدة المباراة</strong>
+          <span id="watchSubtitle">Yumi Sports</span>
+        </div>
+        <a class="watch-head__external" id="watchExternal" href="#" target="_blank" rel="noopener noreferrer" aria-label="فتح البث في المتصفح">
+          <span>فتح خارجي</span>
+        </a>
+        <button class="icon-btn icon-btn--ghost" data-action="closeWatch" aria-label="إغلاق المشاهدة">×</button>
+      </div>
+      <div class="watch-frame-wrap">
+        <div class="watch-loader" id="watchLoader">
+          <span class="watch-loader__ring" aria-hidden="true"></span>
+          <span>جارٍ تحميل البث من Yumi Sports...</span>
+        </div>
+        <iframe
+          id="watchFrame"
+          title="بث المباراة من Yumi Sports"
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="watch-foot">
+        <span>البث من Yumi Sports — يتطلب اتصالاً بالإنترنت</span>
+        <button class="btn btn--soft btn--small" data-action="closeWatch">العودة للتطبيق</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="install-bar" id="installBar" hidden>
+    <img src="assets/icon-192.png" alt="" width="38" height="38" />
+    <div class="install-bar__copy">
+      <strong>ثبّت وصل الحسيني</strong>
+      <span>تجربة أسرع ووصول مباشر من الشاشة الرئيسية</span>
+    </div>
+    <button class="btn btn--small btn--primary" id="installBtn">تثبيت</button>
+    <button class="icon-btn icon-btn--ghost" id="dismissInstall" aria-label="لاحقاً">×</button>
+  </div>
+
+  <noscript>
+    <div class="noscript">يحتاج تطبيق وصل الحسيني إلى تفعيل JavaScript لعرض المحتوى والوظائف.</div>
+  </noscript>
+
+  <script>
+    /* حماية للأجهزة القديمة: إذا لم يعمل المحرّك، تظهر رسالة واضحة بدل شاشة فارغة */
+    window.__waslBooted = false;
+    window.setTimeout(function () {
+      if (window.__waslBooted) return;
+      document.body.innerHTML = '<main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#120a06;color:#f4e6da;font-family:Tahoma,Arial,sans-serif;text-align:center;direction:rtl">' +
+        '<div style="max-width:340px">' +
+        '<div style="font-size:20px;font-weight:800;color:#ff9a3c;margin-bottom:10px">تعذّر تشغيل التطبيق</div>' +
+        '<p style="font-size:14px;line-height:1.9;margin:0 0 16px">هذا الهاتف يحتاج تحديث محرّك العرض. افتح متجر Play، ثم حدّث تطبيق <b>Android System WebView</b> و<b>Google Chrome</b>، وبعدها أعد فتح التطبيق.</p>' +
+        '<a href="https://play.google.com/store/apps/details?id=com.google.android.webview" style="display:inline-block;background:#ff6a00;color:#1a0c06;text-decoration:none;font-weight:800;padding:11px 18px;border-radius:12px">تحديث WebView</a>' +
+        '<div style="margin-top:14px"><a href="index.html" style="color:#ffb877;font-size:13px">إعادة المحاولة</a></div>' +
+        '</div></main>';
+    }, 12000);
+  </script>
+
+  <script src="data.js" defer></script>
+  <script src="icons.js" defer></script>
+  <script src="core.js" defer></script>
+  <script src="screens-main.js" defer></script>
+  <script src="screens-extra.js" defer></script>
+  <script src="admin.js" defer></script>
+  <script src="provider-365.js" defer></script>
+  <script src="provider-fotmob.js" defer></script>
+  <script src="api.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

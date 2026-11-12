@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="النصر">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6c500"/>
+      <stop offset="1" stop-color="#b8860b"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".30"/>
+      <stop offset=".45" stop-color="#ffffff" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".24"/>
+    </linearGradient>
+    <clipPath id="shield">
+      <path d="M128 6 L238 42 L224 178 Q211 222 128 250 Q45 222 32 178 L18 42 Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#shield)">
+    <rect width="256" height="256" fill="url(#bg)"/>
+    <path d="M-40 210 L200 -30 L256 26 L16 266 Z" fill="#ffffff" opacity=".10"/>
+    <path d="M-40 250 L220 -10 L256 26 L-4 286 Z" fill="#000000" opacity=".08"/>
+    <rect width="256" height="256" fill="url(#shine)"/>
+    
+    <circle cx="128" cy="92" r="33" fill="#000000" opacity=".16"/>
+    <circle cx="128" cy="92" r="33" fill="none" stroke="#ffffff" stroke-opacity=".6" stroke-width="2.5"/>
+    <path d="M128 75 L142 86 L137 103 H119 L114 86 Z" fill="#ffffff" fill-opacity=".95"/>
+    <path d="M106 97 L115 91 M150 97 L141 91 M118 112 L110 122 M138 112 L146 122 M128 125 L128 134" stroke="#ffffff" stroke-opacity=".6" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="128" y="174" text-anchor="middle" font-family="Segoe UI, Tahoma, Arial, sans-serif" font-size="40" font-weight="900" fill="#1b1b1b" direction="rtl">النصر</text>
+    <text x="128" y="204" text-anchor="middle" font-family="Segoe UI, Tahoma, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#1b1b1b" fill-opacity=".78">KSA</text>
+  </g>
+  <path d="M128 6 L238 42 L224 178 Q211 222 128 250 Q45 222 32 178 L18 42 Z" fill="none" stroke="#ffffff" stroke-opacity=".5" stroke-width="3"/>
+  <path d="M128 16 L229 49 L216 175 Q204 214 128 240 Q52 214 40 175 L27 49 Z" fill="none" stroke="#000000" stroke-opacity=".18" stroke-width="2"/>
+</svg>

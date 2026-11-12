@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3c1a0a"/>
+      <stop offset=".58" stop-color="#230f08"/>
+      <stop offset="1" stop-color="#110804"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="30%" r="62%">
+      <stop offset="0" stop-color="#ff6a00" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#ff6a00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ballG" cx="34%" cy="28%" r="78%">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset=".62" stop-color="#ffd9b0"/>
+      <stop offset="1" stop-color="#c9772f"/>
+    </radialGradient>
+    <linearGradient id="fig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd6a6"/>
+      <stop offset="1" stop-color="#ff8a28"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+
+  <!-- pitch -->
+  <g stroke="#ff9a4d" stroke-opacity=".15" fill="none" stroke-width="2">
+    <path d="M-20 436 H820"/>
+    <path d="M560 436 V500"/>
+    <path d="M-20 452 H820"/>
+  </g>
+
+  <!-- goal -->
+  <g>
+    <g fill="none" stroke="#ffb877" stroke-opacity=".55" stroke-width="3">
+      <path d="M512 132 H772 V356 H512"/>
+      <path d="M536 132 V356 M560 132 V356 M584 132 V356 M608 132 V356 M632 132 V356 M656 132 V356 M680 132 V356 M704 132 V356 M728 132 V356 M752 132 V356"/>
+      <path d="M512 156 H772 M512 180 H772 M512 204 H772 M512 228 H772 M512 252 H772 M512 276 H772 M512 300 H772 M512 324 H772 M512 348 H772"/>
+    </g>
+    <g fill="none" stroke="#ff8c00" stroke-width="7" stroke-linecap="round">
+      <path d="M508 126 H776"/>
+      <path d="M508 126 V360"/>
+      <path d="M776 126 V360"/>
+    </g>
+    <path d="M508 360 H776" stroke="#ffb877" stroke-opacity=".35" stroke-width="3"/>
+  </g>
+
+  <!-- goalkeeper -->
+  <g fill="#1a0c06" opacity=".92">
+    <circle cx="612" cy="228" r="20"/>
+    <path d="M612 248 C 590 258, 578 280, 572 306 L 596 316 C 606 292, 620 280, 636 274 Z"/>
+    <path d="M612 252 C 634 250, 650 232, 664 206 L 646 194 C 634 216, 622 226, 606 230 Z"/>
+    <path d="M590 300 C 570 288, 552 270, 540 246 L 524 258 C 538 288, 562 310, 586 322 Z"/>
+  </g>
+
+  <!-- shot trail -->
+  <path d="M334 382 C 430 300, 520 196, 686 158" fill="none" stroke="#ff6a00" stroke-opacity=".85" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 22"/>
+  <path d="M672 142 L 700 152 L 682 176" fill="none" stroke="#ffcf9e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ball -->
+  <g>
+    <circle cx="688" cy="160" r="26" fill="url(#ballG)"/>
+    <g fill="#24130c" opacity=".82">
+      <path d="M688 142 L701 151 L696 167 H680 L675 151 Z"/>
+      <path d="M664 158 L674 164 L671 176 L662 173 Z"/>
+    </g>
+  </g>
+
+  <!-- shooter -->
+  <ellipse cx="228" cy="436" rx="96" ry="16" fill="#000" opacity=".34" filter="url(#soft)"/>
+  <g fill="none" stroke="url(#fig)" stroke-width="23" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M214 262 L200 328 L170 374"/>
+    <path d="M200 328 L260 358 L320 376"/>
+    <path d="M222 206 L182 246 L144 226"/>
+    <path d="M222 206 L266 234 L306 214"/>
+    <path d="M214 182 L214 262"/>
+  </g>
+  <circle cx="214" cy="142" r="28" fill="#ffdcb6"/>
+  <ellipse cx="338" cy="392" rx="34" ry="12" fill="#000" opacity=".3" filter="url(#soft)"/>
+
+  <!-- impact burst -->
+  <g stroke="#ffd0a0" stroke-opacity=".7" stroke-width="4" stroke-linecap="round">
+    <path d="M736 118 L758 104"/>
+    <path d="M744 146 L770 142"/>
+    <path d="M730 92 L738 70"/>
+  </g>
+</svg>

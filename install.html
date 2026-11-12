@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#120A06" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="ثبّت تطبيق وصل الحسيني — سكون الرياضي على جوالك: مباريات، بطولات، أخبار وأكاديمية تدريبية." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="وصل الحسيني" />
+  <title>تثبيت التطبيق — وصل الحسيني</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-180.png" />
+  <link rel="preload" href="assets/fonts/Cairo-Bold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/logo-mark.svg" as="image" />
+  <style>
+    @font-face {
+      font-family: "Cairo";
+      src: url("assets/fonts/Cairo-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Cairo";
+      src: url("assets/fonts/Cairo-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Cairo";
+      src: url("assets/fonts/Cairo-Black.ttf") format("truetype");
+      font-weight: 900;
+      font-display: swap;
+    }
+
+    :root {
+      --orange: #ff6a00;
+      --orange-bright: #ff8c00;
+      --red: #d92700;
+      --red-grad: #f04416;
+      --dark: #120a06;
+      --card: rgba(255, 255, 255, 0.045);
+      --line: rgba(255, 140, 0, 0.22);
+      --text: #fff7f1;
+      --muted: rgba(255, 233, 216, 0.68);
+    }
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+      font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+      background:
+        radial-gradient(120% 90% at 85% -10%, rgba(255, 140, 0, 0.5), transparent 55%),
+        radial-gradient(110% 80% at -10% 10%, rgba(240, 68, 22, 0.42), transparent 60%),
+        radial-gradient(90% 70% at 50% 110%, rgba(217, 39, 0, 0.35), transparent 65%),
+        var(--dark);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+    }
+
+    .glow {
+      position: fixed;
+      inset: auto -20% -30% -20%;
+      height: 60vh;
+      background: radial-gradient(50% 60% at 50% 100%, rgba(255, 106, 0, 0.28), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      animation: rise 0.5s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .brand__logo {
+      width: 132px;
+      height: 132px;
+      filter: drop-shadow(0 18px 38px rgba(217, 39, 0, 0.45));
+    }
+
+    .brand__name {
+      margin: 2px 0 0;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .brand__tag {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange-bright);
+      letter-spacing: 6px;
+    }
+
+    .brand__desc {
+      margin: 4px 0 0;
+      max-width: 340px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 2px;
+    }
+
+    .chip {
+      font-size: 11px;
+      font-weight: 700;
+      color: #ffe3cd;
+      background: rgba(255, 106, 0, 0.12);
+      border: 1px solid rgba(255, 140, 0, 0.28);
+      border-radius: 999px;
+      padding: 6px 11px;
+      white-space: nowrap;
+    }
+
+    .card {
+      width: 100%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffd9bd;
+      margin-bottom: 14px;
+    }
+
+    .status__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #43d17a;
+      box-shadow: 0 0 0 4px rgba(67, 209, 122, 0.16);
+    }
+
+    .status.is-warn .status__dot { background: #ffb020; box-shadow: 0 0 0 4px rgba(255, 176, 32, 0.16); }
+    .status.is-ok .status__dot { background: #43d17a; }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 56px;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 17px;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s ease, filter 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:active { transform: scale(0.985); }
+
+    .btn--primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--orange-bright), var(--orange) 45%, var(--red-grad) 78%, var(--red));
+      box-shadow: 0 14px 30px rgba(240, 68, 22, 0.38);
+    }
+
+    .btn--primary:hover { filter: brightness(1.06); }
+
+    .btn--ghost {
+      margin-top: 10px;
+      color: #ffe6d4;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 140, 0, 0.26);
+      font-size: 15px;
+      min-height: 50px;
+    }
+
+    .btn[hidden] { display: none; }
+
+    .steps {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .steps li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .steps b { color: var(--text); font-weight: 700; }
+
+    .num {
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      margin-top: 1px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 900;
+      color: #2a1207;
+      background: linear-gradient(135deg, #ffd08a, var(--orange-bright));
+    }
+
+    .note {
+      margin: 14px 0 0;
+      font-size: 11px;
+      line-height: 1.7;
+      color: rgba(255, 233, 216, 0.5);
+      text-align: center;
+    }
+
+    .footer {
+      width: 100%;
+      text-align: center;
+      font-size: 11px;
+      color: rgba(255, 233, 216, 0.55);
+      line-height: 1.9;
+    }
+
+    .footer strong { color: #ffe0c8; font-weight: 700; }
+
+    .footer__links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .footer__links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--orange-bright);
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(255, 140, 0, 0.3);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 11px;
+    }
+
+    .footer__links a:hover { background: rgba(255, 140, 0, 0.12); }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: calc(22px + env(safe-area-inset-bottom));
+      transform: translate(-50%, 20px);
+      background: rgba(30, 15, 8, 0.96);
+      border: 1px solid rgba(255, 140, 0, 0.35);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      z-index: 5;
+      max-width: calc(100% - 32px);
+      text-align: center;
+    }
+
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    @media (max-width: 360px) {
+      .brand__logo { width: 108px; height: 108px; }
+      .brand__name { font-size: 26px; }
+      .card { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <div class="brand">
+      <img class="brand__logo" src="assets/logo-mark.svg" alt="شعار وصل الحسيني" width="132" height="132" />
+      <h1 class="brand__name">وصل الحسيني</h1>
+      <p class="brand__tag">سكون الرياضي</p>
+      <p class="brand__desc">ثبّت التطبيق على جوالك واستمتع بتجربة أسرع، أيقونة على الشاشة الرئيسية، وعمل دون اتصال.</p>
+      <div class="chips">
+        <span class="chip">مباريات وبطولات</span>
+        <span class="chip">أخبار رياضية</span>
+        <span class="chip">أكاديمية تدريب</span>
+        <span class="chip">يعمل دون اتصال</span>
+      </div>
+    </div>
+
+    <section class="card" aria-labelledby="installTitle">
+      <div class="status" id="status">
+        <span class="status__dot" aria-hidden="true"></span>
+        <span id="statusText">جارٍ التحقق من إمكانية التثبيت…</span>
+      </div>
+
+      <h2 id="installTitle" hidden>تثبيت التطبيق</h2>
+
+      <button class="btn btn--primary" id="installBtn" type="button">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        <span>تثبيت التطبيق</span>
+      </button>
+
+      <a class="btn btn--ghost" id="openBtn" href="index.html#/home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M21 14v7H3V3h7"/></svg>
+        <span>فتح التطبيق</span>
+      </a>
+
+      <ol class="steps" id="steps">
+        <li><span class="num">1</span><span>افتح هذه الصفحة في <b>Chrome</b> على Android أو <b>Safari</b> على iPhone.</span></li>
+        <li><span class="num">2</span><span>من قائمة المتصفح اختر <b>«تثبيت التطبيق»</b> أو <b>«إضافة إلى الشاشة الرئيسية»</b>.</span></li>
+        <li><span class="num">3</span><span>أكّد التثبيت، وستظهر أيقونة وصل الحسيني على شاشتك.</span></li>
+      </ol>
+
+      <p class="note" id="note">التثبيت متاح عند فتح الصفحة عبر رابط HTTPS أو من خادم محلي.</p>
+    </section>
+
+    <footer class="footer">
+      <div>برمجة وصنع التطبيقات — <strong>المبرمج: خالد الحماني</strong></div>
+      <div>للتواصل: <strong>737202159</strong></div>
+      <div class="footer__links">
+        <a href="tel:737202159" aria-label="اتصال هاتفي">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          اتصال
+        </a>
+        <a href="https://wa.me/967737202159" target="_blank" rel="noopener" aria-label="واتساب">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+          واتساب
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var installBtn = document.getElementById("installBtn");
+      var openBtn = document.getElementById("openBtn");
+      var status = document.getElementById("status");
+      var statusText = document.getElementById("statusText");
+      var steps = document.getElementById("steps");
+      var note = document.getElementById("note");
+      var toast = document.getElementById("toast");
+      var deferredPrompt = null;
+
+      function isStandalone() {
+        return window.matchMedia("(display-mode: standalone)").matches ||
+          window.matchMedia("(display-mode: fullscreen)").matches ||
+          window.navigator.standalone === true;
+      }
+
+      function isIOS() {
+        return /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      }
+
+      function isAndroid() {
+        return /android/i.test(navigator.userAgent);
+      }
+
+      function showToast(text) {
+        toast.textContent = text;
+        toast.classList.add("show");
+        setTimeout(function () { toast.classList.remove("show"); }, 2600);
+      }
+
+      function setStatus(text, kind) {
+        statusText.textContent = text;
+        status.className = "status" + (kind ? " is-" + kind : "");
+      }
+
+      function showStepsForPlatform() {
+        if (isIOS()) {
+          steps.innerHTML =
+            '<li><span class="num">1</span><span>افتح هذه الصفحة في متصفح <b>Safari</b>.</span></li>' +
+            '<li><span class="num">2</span><span>اضغط زر <b>المشاركة</b> في شريط المتصفح.</span></li>' +
+            '<li><span class="num">3</span><span>اختر <b>«إضافة إلى الشاشة الرئيسية»</b> ثم <b>«إضافة»</b>.</span></li>';
+          note.textContent = "على iPhone لا يظهر زر تثبيت تلقائي؛ استخدم خطوات Safari أعلاه.";
+        } else if (isAndroid()) {
+          steps.innerHTML =
+            '<li><span class="num">1</span><span>افتح هذه الصفحة في متصفح <b>Chrome</b>.</span></li>' +
+            '<li><span class="num">2</span><span>اضغط قائمة النقاط الثلاث <b>⋮</b> أعلى المتصفح.</span></li>' +
+            '<li><span class="num">3</span><span>اختر <b>«تثبيت التطبيق»</b> أو <b>«إضافة إلى الشاشة الرئيسية»</b>.</span></li>';
+          note.textContent = "إذا لم يظهر خيار التثبيت، تأكد من فتح الصفحة عبر HTTPS أو localhost.";
+        } else {
+          steps.innerHTML =
+            '<li><span class="num">1</span><span>افتح الصفحة على جوالك عبر رابط HTTPS.</span></li>' +
+            '<li><span class="num">2</span><span>على Android استخدم <b>Chrome</b>، وعلى iPhone استخدم <b>Safari</b>.</span></li>' +
+            '<li><span class="num">3</span><span>اختر <b>«تثبيت التطبيق»</b> من قائمة المتصفح.</span></li>';
+        }
+      }
+
+      function showInstalled() {
+        setStatus("التطبيق مثبت على هذا الجهاز", "ok");
+        installBtn.hidden = true;
+        openBtn.classList.remove("btn--ghost");
+        openBtn.classList.add("btn--primary");
+        steps.hidden = true;
+        note.textContent = "يمكنك فتح التطبيق من أيقونته على الشاشة الرئيسية.";
+      }
+
+      if (isStandalone()) {
+        showInstalled();
+        return;
+      }
+
+      showStepsForPlatform();
+      setStatus("جارٍ التحقق من إمكانية التثبيت…", "warn");
+
+      setTimeout(function () {
+        if (deferredPrompt || isStandalone()) return;
+        setStatus(isIOS() ? "للتثبيت على iPhone اتبع خطوات Safari" : "التثبيت متاح من قائمة المتصفح (⋮)", "warn");
+      }, 2800);
+
+      window.addEventListener("beforeinstallprompt", function (event) {
+        event.preventDefault();
+        deferredPrompt = event;
+        setStatus("التطبيق جاهز للتثبيت الآن", "ok");
+      });
+
+      window.addEventListener("appinstalled", function () {
+        deferredPrompt = null;
+        showInstalled();
+        showToast("تم تثبيت وصل الحسيني بنجاح");
+      });
+
+      installBtn.addEventListener("click", async function () {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          try {
+            var choice = await deferredPrompt.userChoice;
+            if (choice && choice.outcome === "accepted") {
+              showToast("شكراً! جارٍ تثبيت التطبيق");
+            } else {
+              showToast("يمكنك التثبيت لاحقاً من قائمة المتصفح");
+            }
+          } catch (error) {}
+          deferredPrompt = null;
+          return;
+        }
+
+        if (isIOS()) {
+          showToast("على iPhone: زر المشاركة ثم «إضافة إلى الشاشة الرئيسية»");
+          return;
+        }
+
+        if (isStandalone()) {
+          showInstalled();
+          return;
+        }
+
+        setStatus("التثبيت التلقائي غير متاح في هذا المتصفح", "warn");
+        note.textContent = "استخدم قائمة المتصفح (⋮) واختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».";
+        showToast("افتح قائمة المتصفح واختر «تثبيت التطبيق»");
+      });
+
+      if ("serviceWorker" in navigator && location.protocol !== "file:") {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("sw.js").catch(function () {});
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
